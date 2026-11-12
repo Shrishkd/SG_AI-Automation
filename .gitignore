@@ -1,1 +1,36 @@
-*.pdf
+# Environment
+.env
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Google API credentials
+credentials.json
+token.json
+token.pickle
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Distribution
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+sending_log.json
+
+# Test
+.pytest_cache/
+.coverage
+htmlcov/

@@ -1,0 +1,66 @@
+# ============================================================
+# Campaign Configuration
+# ============================================================
+# Swap this file to run the system for any brand/campaign.
+
+brand:
+  name: "Glow Naturals"
+  tagline: "Clean Beauty, Real Results"
+  description: >
+    Glow Naturals is a premium D2C skincare brand specializing in
+    clean, sustainable, and cruelty-free beauty products. We focus
+    on natural ingredients backed by dermatological research.
+  website: "https://glownaturals.example.com"
+  tone: "friendly, warm, and professional"
+  contact_name: "Priya Sharma"
+  contact_title: "Brand Partnerships Manager"
+  contact_email: "partnerships@glownaturals.example.com"
+
+campaign:
+  name: "Summer Glow 2026"
+  goal: >
+    Partner with skincare, beauty, and wellness influencers to
+    promote our new Summer Glow collection launch.
+  collaboration_types:
+    - "Product gifting + honest review"
+    - "Sponsored Instagram post/reel"
+    - "Instagram Story takeover"
+    - "Affiliate partnership with commission"
+  budget_range: "₹5,000 – ₹50,000 per collaboration"
+
+target_influencers:
+  niches:
+    - "skincare"
+    - "beauty"
+    - "wellness"
+    - "self-care"
+    - "clean beauty"
+    - "dermatology"
+  keywords:
+    - "skincare routine"
+    - "beauty tips"
+    - "natural skincare"
+    - "glowing skin"
+    - "clean beauty"
+    - "skin care blogger"
+  locations:
+    - "India"
+    - "Mumbai"
+    - "Delhi"
+    - "Bangalore"
+  follower_range:
+    min: 5000
+    max: 500000
+  min_engagement_rate: 2.0  # percentage
+  max_results_per_search: 50
+
+email:
+  subject_template: "Collaboration Opportunity – {brand_name} x @{username} ✨"
+  followup_1_delay_days: 4  # days after initial email
+  followup_2_delay_days: 6  # days after followup 1
+  max_followups: 2
+  sending_window:
+    start_hour: 9   # IST
+    end_hour: 18     # IST
+    days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+

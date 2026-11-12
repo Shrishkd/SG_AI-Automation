@@ -1,0 +1,89 @@
+# ============================================================
+# AI Scoring Rubric for Influencer Evaluation
+# ============================================================
+# Claude uses these weighted dimensions to score influencers 0-100.
+# Each dimension gets a score 0-100, then the weighted average
+# produces the final composite score.
+
+scoring:
+  dimensions:
+    niche_relevance:
+      weight: 30
+      description: >
+        How closely does the influencer's content align with the
+        brand's niche? Look at their bio, content themes, hashtags,
+        and overall positioning.
+      scoring_guide:
+        90-100: "Perfect niche match — they are a dedicated {niche} creator"
+        70-89: "Strong alignment — {niche} is a major part of their content"
+        50-69: "Moderate overlap — they touch on {niche} alongside other topics"
+        30-49: "Weak alignment — {niche} is a minor theme in their content"
+        0-29: "No meaningful connection to {niche}"
+
+    audience_quality:
+      weight: 25
+      description: >
+        Assess engagement rate, follower authenticity signals, and
+        audience relevance. High follower count with low engagement
+        suggests fake followers.
+      scoring_guide:
+        90-100: "Exceptional engagement (>5%), authentic audience signals"
+        70-89: "Strong engagement (3-5%), good audience quality"
+        50-69: "Average engagement (1-3%), some quality concerns"
+        30-49: "Below average engagement (<1%), possible fake followers"
+        0-29: "Very low engagement, strong fake follower signals"
+
+    brand_safety:
+      weight: 15
+      description: >
+        Check for controversial content, competitor partnerships,
+        potentially offensive material, or anything that could harm
+        the brand's reputation.
+      scoring_guide:
+        90-100: "Clean profile, no controversies, brand-safe content"
+        70-89: "Mostly clean, minor concerns that are manageable"
+        50-69: "Some borderline content, needs manual review"
+        30-49: "Notable concerns — competitor partnerships or edgy content"
+        0-29: "High risk — controversial content or brand conflicts"
+
+    collaboration_likelihood:
+      weight: 20
+      description: >
+        How likely is this influencer to accept a collaboration?
+        Signals: business email available, history of brand partnerships,
+        actively promotes collaborations, professional presentation.
+      scoring_guide:
+        90-100: "Active collaborator, business email listed, open to partnerships"
+        70-89: "Has done collabs before, professional profile, likely to respond"
+        50-69: "Some collab history, may or may not be interested"
+        30-49: "Rarely collaborates, no business contact visible"
+        0-29: "No collaboration signals, unlikely to respond"
+
+    content_quality:
+      weight: 10
+      description: >
+        Assess production value, consistency, posting frequency,
+        and overall aesthetic alignment with the brand.
+      scoring_guide:
+        90-100: "Exceptional quality, consistent posting, aesthetic match"
+        70-89: "Good quality, regular posting, decent aesthetic"
+        50-69: "Average quality, inconsistent posting"
+        30-49: "Below average quality or very inconsistent"
+        0-29: "Low quality content, poor fit aesthetically"
+
+  thresholds:
+    high_priority: 75    # Score >= 75 → immediate outreach
+    medium_priority: 55  # Score 55-74 → secondary outreach
+    low_priority: 35     # Score 35-54 → backlog
+    reject: 35           # Score < 35 → skip
+
+  output_format:
+    required_fields:
+      - "overall_score"
+      - "dimension_scores"
+      - "niche_category"
+      - "influencer_tier"  # nano/micro/mid/macro
+      - "profile_summary"
+      - "recommendation"   # recommend/consider/skip
+      - "reasoning"
+
